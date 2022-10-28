@@ -5,11 +5,6 @@
       u-transparent-bg
       c-col-card--normal c-col-card--has-link
     "
-    :class="[
-      { 'c-btn--primary': primary },
-      { 'c-btn--secondary': secondary },
-      { 'c-btn--ghost': ghost },
-    ]"
   >
     <div class="c-col-card__wrap">
       <figure
@@ -37,7 +32,7 @@
           </div>
         </div>
         <div class="c-col-card__buttons">
-          <BaseButton color="primary"></BaseButton>
+          <BaseButton color="secondary"></BaseButton>
           <span class="c-cta">More Info</span>
         </div>
       </div>

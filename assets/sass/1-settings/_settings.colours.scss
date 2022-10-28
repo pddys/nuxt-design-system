@@ -25,7 +25,8 @@ $cool-black: #0B1226;
 // Greys – shades of grey created from the black variable.
 //
 
-@function black($level) { // use e.g. black(10) to output a light grey color.
+@function black($level) {
+    // use e.g. black(10) to output a light grey color.
     @return mix($black, $white, $level * 1%);
 }
 
@@ -68,8 +69,8 @@ $vimeo: #00ADEF;
 //
 // Project Colours as variables
 //
-$primary: #D95B43;
-$secondary: #EBD077;
+$primary: #EF2D56;
+$secondary: #8CD867;
 $tertiary: #54777B;
 $highlight: #542537;
 
@@ -78,9 +79,9 @@ $highlight: #542537;
 //
 $colors: (
     primary: $primary,
-	secondary: $secondary,
-	tertiary: $tertiary,
-	highlight: $highlight,
+    secondary: $secondary,
+    tertiary: $tertiary,
+    highlight: $highlight,
     black: $black,
     white: $white
 );
@@ -88,7 +89,8 @@ $colors: (
 //
 // Colour Helper Function
 //
-@function color($key) { // use e.g. color(navy) to refer to color hex values
+@function color($key) {
+    // use e.g. color(navy) to refer to color hex values
     @return map-get($colors, $key);
 }
 
@@ -100,12 +102,10 @@ $colors: (
 // used in 7-utlities/colour-classes
 
 $backgrounds: (
-    white: (
-        background-color: color(white),
-        color: color(black)
-    ),
-    black: (
-        background-color: color(black),
-        color: color(white)
-    )
+    white: (background-color: color(white),
+        color: color(black)),
+    black: (background-color: color(black),
+        color: color(white)),
+    brick: (background-color: $primary,
+        color: black)
 );

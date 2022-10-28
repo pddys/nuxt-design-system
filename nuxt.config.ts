@@ -1,14 +1,5 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+    //Global CSS
     css: ["@/assets/sass/main.scss"],
-    //Global JS
-    vite: {
-        css: {
-            preprocessorOptions: {
-                sass: {
-                    additionalData: '@import "@/assets/sass/_variables.sass"',
-                },
-            },
-        },
-    },
 })
