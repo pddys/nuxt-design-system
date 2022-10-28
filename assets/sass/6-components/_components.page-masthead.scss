@@ -1,0 +1,106 @@
+/*  ==========================================================================
+     # PAGE MASTHEAD
+    ========================================================================== */
+
+
+
+.c-pg-masthead {
+    background-color: black;
+    color: white;
+
+    .o-wrapper {
+        padding-top: $inuit-global-spacing-unit-small;
+        padding-bottom: $inuit-global-spacing-unit-small;
+
+        @include mq($from: tablet) {
+            padding-top: $inuit-global-spacing-unit;
+            padding-bottom: $inuit-global-spacing-unit;
+        }
+    }
+}
+
+.c-pg-title {
+    margin-bottom: 0;
+}
+
+.c-masthead {
+    position: relative;
+
+    &::before {
+        @include scrimGradient(black, to top);
+        content: '';
+        width: 100%;
+        height: 70%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+    }
+}
+
+.c-masthead__image,
+.c-masthead__video {
+    background: $black;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+    animation-duration: 3s;
+    animation-name: scaleFadeIn;
+    animation-iteration-count: once;
+}
+
+.c-masthead__text {
+    color: $white;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    transform: translateY(-100%);
+    z-index: 100;
+    max-width: 900px;
+
+    h1 {
+        margin-bottom: 0.25em;
+        animation-duration: 1.5s;
+        animation-name: fadeInUp;
+        @include font-black;
+    }
+
+    h2 {
+        @include font-size-3;
+        @include font-bold;
+        animation-duration: 1.5s;
+        animation-delay: 250ms;
+        animation-name: fadeInUp;
+    }
+}
+
+@keyframes blurFadeIn {
+    0% {
+        opacity: 0;
+        filter: brightness(1) blur(20px)
+    }
+
+    10% {
+        opacity: 1;
+        filter: brightness(2) blur(10px)
+    }
+
+    100% {
+        opacity: 1;
+        filter: brightness(1) blur(0)
+    }
+}
+
+@keyframes scaleFadeIn {
+    0% {
+        opacity: 0;
+        clip-path: inset(5%);
+        transform: scale(111.11%)
+    }
+
+    100% {
+        opacity: 1;
+        clip-path: inset(0);
+        transform: scale(1);
+    }
+}
